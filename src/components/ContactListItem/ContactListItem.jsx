@@ -1,0 +1,36 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import sharedStyles from 'components/sharedStyles.module.css';
+import css from './ContactListItem.module.css';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contactsSlice';
+
+const ContactListItem = ({ contact }) => {
+  const dispatch = useDispatch();
+
+  const handelDelete = () => {
+    dispatch(deleteContact(contact.id));
+  };
+
+  return (
+    <li key={contact.id} className={css.item}>
+      {contact.name}
+      <button
+        className={`${sharedStyles.button} ${css.buttonWithMargin}`}
+        onClick={handelDelete}
+      >
+        Delete
+      </button>
+    </li>
+  );
+};
+
+ContactListItem.propTypes = {
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default ContactListItem;

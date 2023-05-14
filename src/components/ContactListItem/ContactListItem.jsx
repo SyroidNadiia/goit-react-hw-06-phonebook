@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import sharedStyles from 'components/sharedStyles.module.css';
-import css from './ContactListItem.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsSlice';
+import sharedStyles from 'components/sharedStyles.module.css';
+import css from './ContactListItem.module.css';
 
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();

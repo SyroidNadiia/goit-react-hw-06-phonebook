@@ -1,7 +1,7 @@
 import React from 'react';
-import sharedStyles from 'components/sharedStyles.module.css';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filtersSlice';
+import sharedStyles from 'components/sharedStyles.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();

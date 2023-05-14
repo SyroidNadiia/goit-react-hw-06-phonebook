@@ -7,10 +7,10 @@ export const App = () => {
   return (
     <div className={sharedStyles.section}>
       <h1 className={sharedStyles.title}>Phonebook</h1>
-      <ContactForm/>
+      <ContactForm />
       <h2 className={sharedStyles.title}>Contacts</h2>
       <Filter></Filter>
-      <ContactList/>
+      <ContactList />
     </div>
   );
 };

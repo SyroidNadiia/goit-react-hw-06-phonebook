@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
-import sharedStyles from 'components/sharedStyles.module.css';
-import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
+import sharedStyles from 'components/sharedStyles.module.css';
+import css from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,9 @@ const ContactForm = () => {
     const name = e.target.name.value;
     const number = e.target.number.value;
     const newContact = { name, number };
+    console.log(newContact);
 
+    console.log(contacts);
     if (contacts.find(item => item.name.toLowerCase() === name.toLowerCase())) {
       Notiflix.Notify.failure(`${name} is already in contacts`);
       return;
